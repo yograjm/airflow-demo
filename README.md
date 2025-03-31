@@ -53,5 +53,17 @@
   - Add data to db
 
 - Airflow to run the Python script `process_data.py` periodically
+  - Ref (https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)
+  - UI was running
+  - DAG was creating
+  - Pipeline execution failed because of localhost in `postgrescont`
+
+
+Issues:
+- Pipeline execution failed because of localhost in `postgrescont`
+   - Host postgres on EC2
+- Missing values in `titanic.csv`
+   - Update CSV 
+   - OR handle missing via code in `process_data.py`
 
 
