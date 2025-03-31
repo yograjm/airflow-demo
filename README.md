@@ -40,7 +40,7 @@
         Parch INTEGER,
         Ticket VARCHAR(50),
         Fare DECIMAL(10, 4),
-        Cabin VARCHAR(10),
+        Cabin VARCHAR(100),
         Embarked CHAR(1)
     );
     ```

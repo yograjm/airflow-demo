@@ -8,18 +8,20 @@ db_params = {
     'dbname': 'storedb',
     'user': 'postgres',
     'password': 'mypassword',
-    'host': 'localhost',  # EC2 public IP # or your database host
-    'port': '5432'        # default PostgreSQL port
+    'host': 'opulent-space-cod-qv4p5xvwp5hx5p9.github.dev',  # EC2 public IP # or your database host
+    'port': '5432'  #'5432'        # default PostgreSQL port
 }
 
 
 def append_data_to_db():
 
     # Read the CSV file
-    csv_file_path = 'https://raw.githubusercontent.com/yograjm/airflow-demo/refs/heads/main/titanic.csv'
+    csv_file_path = 'https://raw.githubusercontent.com/yograjm/airflow-demo/refs/heads/main/dags/titanic.csv'
     data = pd.read_csv(csv_file_path)
-    print(data.shape)
-    print(data.isna().sum())
+    data['Age'] = data['Age'].fillna(data['Age'].mean())
+    data['Embarked'] = data['Embarked'].fillna('S')
+    #data['Cabin'] = data['Cabin'].fillna()
+    #print(data.isna().sum())
 
     # Connect to the PostgreSQL database
     try:
@@ -44,15 +46,13 @@ def append_data_to_db():
 
         # Next Row to add to db
         curr_rows = len(df)
+        if curr_rows >= len(data):
+            curr_rows = 0
         print(f"Existing rows in db: {curr_rows}")
 
         # Insert data into the passengers table
         row_to_add = data.iloc[[curr_rows], :]
-        #row_to_add = row_to_add.where(pd.notna(row_to_add), None)
-        #row_to_add = row_to_add.fillna(NULL)
-        print(row_to_add)
-        
-        print(row_to_add.dtypes)
+        # print(row_to_add)
 
         for index, row in row_to_add.iterrows():
             cursor.execute(
