@@ -47,6 +47,7 @@
 
     To check table rows: (Press `q` if the output is being displayed in a pager)
     `SELECT * FROM titanic;`
+    `SELECT * FROM titanic ORDER BY passengerid DESC LIMIT 10;`
 
 - Create a Python script, `process_data.py`, to add data to `storedb` from the csv file
   - Load the csv data
@@ -62,8 +63,7 @@
 Issues:
 - Pipeline execution failed because of localhost in `postgrescont`
    - Host postgres on EC2
-- Missing values in `titanic.csv`
-   - Update CSV 
-   - OR handle missing via code in `process_data.py`
+
+
 
 
