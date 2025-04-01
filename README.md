@@ -59,6 +59,8 @@
     `SELECT * FROM titanic;`
     `SELECT * FROM titanic ORDER BY passengerid DESC LIMIT 10;`
 
+    Use `\d` to quit.
+
 - On Codespace, create a Python script, `process_data.py`, to add data to `storedb` from the csv file
   - Load the csv data
   - Add data to db
@@ -74,6 +76,7 @@
   - UI running
   - DAG creating
   - Pipeline execution success - data appending to the DB
+  - Stop Airflow: `docker compose down --volumes --rmi all`
 
 
 Issues Encountered:
