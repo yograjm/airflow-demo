@@ -67,12 +67,13 @@
   - Ref (https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)
     `curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.10.5/docker-compose.yaml'`
     `mkdir -p ./dags ./logs ./plugins ./config`
+    Add `.py` files to `./dags` folder
     `echo -e "AIRFLOW_UID=$(id -u)" > .env`
     `docker compose up airflow-init`
     `docker compose up`
-  - UI was running
-  - DAG was creating
-  - Pipeline execution failed because of localhost in `postgrescont`
+  - UI running
+  - DAG creating
+  - Pipeline execution success - data appending to the DB
 
 
 Issues Encountered:

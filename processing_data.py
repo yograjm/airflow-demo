@@ -18,7 +18,7 @@ def append_data_to_db():
     # Read the CSV file
     csv_file_path = 'https://raw.githubusercontent.com/yograjm/airflow-demo/refs/heads/main/titanic.csv'
     data = pd.read_csv(csv_file_path)
-    data['Age'] = data['Age'].fillna(data['Age'].mean())
+    data['Age'] = data['Age'].fillna(int(data['Age'].mean()))
     data['Embarked'] = data['Embarked'].fillna('S')
     #data['Cabin'] = data['Cabin'].fillna('No cabin')           # 1, 0   
     #print(data.isna().sum())

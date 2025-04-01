@@ -12,7 +12,7 @@ default_args = {
 }
 
 dag = DAG(
-    'process_data_pipeline_4',
+    'data_process_pipeline_1',
     default_args=default_args,
     schedule_interval='* * * * *',
     catchup=False
@@ -25,13 +25,3 @@ process_data_task = PythonOperator(
     dag=dag
 )
 
-
-
-
-# process_task = PythonOperator(
-#     task_id='process_weather_data',
-#     python_callable=func2, # process_weather.process_weather,
-#     dag=dag
-# )
-
-# fetch_task >> process_task  # Define execution order
