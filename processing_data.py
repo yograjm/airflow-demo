@@ -8,7 +8,7 @@ db_params = {
     'dbname': 'storedb',
     'user': 'postgres',
     'password': 'mypassword',
-    'host': 'localhost',  # EC2 public IP # or your database host
+    'host': '65.1.147.198',  # EC2 public IP # or your database host
     'port': '5432'  #'5432'        # default PostgreSQL port
 }
 

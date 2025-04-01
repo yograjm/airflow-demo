@@ -8,8 +8,8 @@ db_params = {
     'dbname': 'storedb',
     'user': 'postgres',
     'password': 'mypassword',
-    'host': 'localhost',  # or your database host
-    'port': '5432'        # default PostgreSQL port
+    'host': '65.1.147.198',  # or your database host
+    'port': '5432'           # default PostgreSQL port
 }
 
 
